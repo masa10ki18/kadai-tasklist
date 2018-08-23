@@ -1,6 +1,6 @@
   <%= form_for(task) do |t| %>
     <% if task.errors.any? %>
-    <div id="error_explanation">
+    <div class="alert alert-warning">
       <ul>
         <% task.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -9,11 +9,15 @@
     </div>
   <% end %>
   
-    <%= t.label :status, 'ステータス' %>
+  <div class="form-group">
+    <%= t.label :status, 'ステータス' %><br>
     <%= t.text_field :status %>
+  </div>
   
-    <%= t.label :content, 'タスク' %>
+  <div class="form-group">
+    <%= t.label :content, 'タスク' %><br>
     <%= t.text_field :content %>
+  </div>  
     
-    <%= t.submit '投稿' %>
+    <%= t.submit '投稿' ,class: "btn btn-primary" %>
   <% end %>
