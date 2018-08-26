@@ -9,14 +9,15 @@
     </div>
   <% end %>
   
+  
   <div class="form-group">
     <%= t.label :status, 'ステータス' %><br>
-    <%= t.text_field :status %>
+    <%= t.text_field :status, class:"form-control" %>
   </div>
   
   <div class="form-group">
     <%= t.label :content, 'タスク' %><br>
-    <%= t.text_field :content %>
+    <%= t.text_field :content, class:"form-control" %>
   </div>  
     
     <%= t.submit '投稿' ,class: "btn btn-primary" %>
