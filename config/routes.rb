@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
-  #ルーティング、使用するアクションのみ
+  #ルーティング:使用するアクションのみ
   resources :tasks, only: [:new, :cretae, :update, :destroy]
   
   get 'signup', to: 'users#new'
