@@ -1,12 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task , only: [:show, :edit, :update, :destroy] 
-  
-  def index
-    @tasks = Task.all
-  end
-
-  def show
-  end
+  before_action :current_user , only: [:update, :destroy]
   
   def new
     @task = Task.new
@@ -23,9 +17,6 @@ class TasksController < ApplicationController
       flash[:danger] = 'Task が投稿されませんでした'
       render :new
     end
-  end
-  
-  def edit
   end
   
   def update
